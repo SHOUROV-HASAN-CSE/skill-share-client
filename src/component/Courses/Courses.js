@@ -1,8 +1,13 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Courses = () => {
+  const courses = useLoaderData();
   return (
     <div>
+      {
+        courses.map(course =><)
+      }
       <h2>this is course component</h2>
     </div>
   );

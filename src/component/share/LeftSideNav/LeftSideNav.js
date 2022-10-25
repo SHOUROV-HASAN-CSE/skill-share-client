@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Link } from 'react-router-dom';
 
 const LeftSideNav = () => {
@@ -10,7 +9,7 @@ const LeftSideNav = () => {
     useEffect(()=>{
       fetch('http://localhost:5000/course-categories')
       .then(res => res.json())
-      .then(data =>  setCategories(data))
+      .then(data => setCategories(data))
     }, [])
 
 
@@ -19,7 +18,7 @@ const LeftSideNav = () => {
       <h2 className='fw-bold text-info mb-4'>Course Category</h2>
       <div>
         {
-          categories.map(category => <p key={category.id} vertical>
+          categories.map(category => <p key={category.id}>
             <Link to={`/category/${category.id}`}><Button variant="outline-info" className='fw-bold'>{category.name}</Button></Link>
           </p>)
         }

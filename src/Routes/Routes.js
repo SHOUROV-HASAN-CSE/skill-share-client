@@ -3,6 +3,7 @@ import Category from "../component/Category/Category";
 import Courses from "../component/Courses/Courses";
 import Error from "../component/Error/Error";
 import Home from "../component/Home/Home";
+import Login from "../component/share/Login/Login";
 import Main from "../layout/Main";
 
 
@@ -18,11 +19,17 @@ export const routes = createBrowserRouter([
       },
       {
         path:'/course',
-        element:<Courses/>
+        element:<Courses/>,
+        loader:() => fetch('http://localhost:5000/course')
       },
       {
         path:'/category/:id',
-        element:<Category/>
+        element:<Category/>,
+        loader:({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+      },
+      {
+        path:'/login',
+        element:<Login/>
       },
    
     ]
