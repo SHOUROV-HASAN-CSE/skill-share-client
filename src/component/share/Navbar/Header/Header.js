@@ -4,13 +4,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import Image from 'react-bootstrap/Image';
+import {FaGithub} from "react-icons/fa";
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 
 
 const Header = () => {
 
-const {user} = useContext(AuthContext);
+const {user, logOut} = useContext(AuthContext);
+
+const handleLogOut = () =>{
+  logOut()
+  .then(() =>{})
+  .catch(error => console.error(error))
+}
 
   return (
     <Navbar collapseOnSelect className='mb-4' expand="lg" bg="info" variant="dark">
@@ -34,9 +42,27 @@ const {user} = useContext(AuthContext);
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+            <Nav.Link href="#deets">
+              {
+                user?.uid ?
+                <>
+                <span> {user?.displayName}</span>
+                <button onClick={handleLogOut}>Logout</button>
+                </>
+                :
+                <>
+                <Link to='/login'>Login</Link>
+                <Link to='/register'>Register</Link>
+                </>
+              }
+             
+              </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            dfgksjhdsfkjdf
+            {
+              user?.photoURL ?
+                <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image>
+                : <FaGithub></FaGithub>
+            }
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
