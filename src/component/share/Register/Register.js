@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -8,7 +9,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
-
   const {createUser, updateUserProfile} = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const Register = () => {
 
 
   return (
-    <div>
+    <Alert variant={'success'}>
       <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Your Name</Form.Label>
@@ -73,7 +73,7 @@ const Register = () => {
       </Button>
     </Form>
     <ToastContainer/>
-    </div>
+    </Alert>
   );
 };
 

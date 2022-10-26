@@ -12,13 +12,9 @@ const CourseCard = ({course}) => {
        <Card className="text-center">
       <Card.Body>
       <Card.Img variant="top" src={image_url} />
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
+        <Card.Title className='fs-1 mt-4 mb-4'>{title}</Card.Title>
         <Link to={`/category/${category_id}`}><Button variant="primary">Course Details</Button></Link>
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
     </div>
   );

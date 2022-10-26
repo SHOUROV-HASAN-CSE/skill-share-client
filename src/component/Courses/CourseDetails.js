@@ -17,7 +17,7 @@ const CourseDetails = () => {
       <Card className="text-center">
       <Card.Header>
         <div>Course Details
-        <Button>Download PDF</Button></div>
+        <Button className='ms-5'>Download PDF</Button></div>
       </Card.Header>
       <Card.Body>
       <Card.Img variant="top" src={image_url} />
