@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Category from "../component/Category/Category";
+import Blog from "../component/Blog/Blog";
 import Checkout from "../component/Courses/Checkout";
 import CourseDetails from "../component/Courses/CourseDetails";
 import Courses from "../component/Courses/Courses";
 import Error from "../component/Error/Error";
+import Faq from "../component/Faq/Faq";
 import Home from "../component/Home/Home";
 import Login from "../component/share/Login/Login";
 import PrivateRoute from "../component/share/PrivateRoute/PrivateRoute";
@@ -28,11 +29,6 @@ export const routes = createBrowserRouter([
       },
       {
         path:'/category/:id',
-        element:<Category/>,
-        loader:({params}) => fetch(`https://skillshare-server.vercel.app/category/${params.id}`)
-      },
-      {
-        path:'/coursedetails/:id',
         element:<CourseDetails/>,
         loader:({params}) => fetch(`https://skillshare-server.vercel.app/category/${params.id}`)
       },
@@ -47,6 +43,14 @@ export const routes = createBrowserRouter([
       {
         path:'/register',
         element:<Register/>
+      },
+      {
+        path:'/blog',
+        element:<Blog/>
+      },
+      {
+        path:'/faq',
+        element:<Faq/>
       }
    
     ]

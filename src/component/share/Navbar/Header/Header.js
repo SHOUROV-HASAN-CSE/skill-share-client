@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import {FaUser} from "react-icons/fa";
 import { CiLogout} from "react-icons/ci";
+import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 
@@ -28,19 +29,9 @@ const handleLogOut = () =>{
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+          <Link to={'/course'}><Button variant='info' className='text-white'>Course</Button></Link> 
+          <Link to={'/blog'}><Button variant='info' className='text-white'>Blog</Button></Link> 
+            
           </Nav>
           <Nav>
             <Nav.Link href="#deets">
@@ -52,7 +43,7 @@ const handleLogOut = () =>{
                 </>
                 :
                 <>
-                <Link to='/login'><button>Login</button></Link>
+                <Link to='/login'><Button variant="light">Login</Button></Link>
                 </>
               }
              

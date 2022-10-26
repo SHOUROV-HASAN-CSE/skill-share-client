@@ -1,4 +1,5 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import Alert from 'react-bootstrap/Alert';
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -27,6 +28,7 @@ const Login = () => {
     providerLogin(googleProvider)
     .then(result=>{
       const user = result.user;
+      navigate(from, {replace: true});
       console.log(user);
     })
     .catch(error =>console.error(error)) 
@@ -35,6 +37,7 @@ const Login = () => {
     providerLogin(githubProvider)
     .then(result=>{
       const user = result.user;
+      navigate(from, {replace: true});
       console.log(user);
     })
     .catch(error =>console.error(error)) 
@@ -61,9 +64,8 @@ const handleSubmit = event =>{
 
 
 
-
   return (
-    <div>
+    <Alert variant={'info'}>
       <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -83,12 +85,12 @@ const handleSubmit = event =>{
     
       <div>
       <ButtonGroup vertical>
-      <Button onClick={handleGoogleSingIn} variant="outline-primary" className='mb-2 ps-5 pe-5'><FaGoogle></FaGoogle>  Login With Google</Button>
+      <Button onClick={handleGoogleSingIn} variant="outline-primary" className='mb-2 mt-5 ps-5 pe-5'><FaGoogle></FaGoogle>  Login With Google</Button>
       <Button onClick={handleGithubSingIn} variant="outline-dark"><FaGithub></FaGithub>  Login With Github</Button>
       </ButtonGroup>
       </div>
       <ToastContainer/>
-    </div>
+    </Alert>
   );
 };
 

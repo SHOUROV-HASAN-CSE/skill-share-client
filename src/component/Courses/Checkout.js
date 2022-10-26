@@ -3,7 +3,7 @@ import React from 'react';
 const Checkout = () => {
   return (
     <div>
-      <h2>this is chackout page</h2>
+     <h1 className='fs-1 fw-semibold mb-5 text-info text-center'>Checkout</h1>
     </div>
   );
 };
