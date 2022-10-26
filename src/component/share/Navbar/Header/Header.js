@@ -5,7 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
-import {FaGithub} from "react-icons/fa";
+import {FaUser} from "react-icons/fa";
+import { CiLogout} from "react-icons/ci";
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 
@@ -47,12 +48,12 @@ const handleLogOut = () =>{
                 user?.uid ?
                 <>
                 <span> {user?.displayName}</span>
-                <button onClick={handleLogOut}>Logout</button>
+               
                 </>
                 :
                 <>
-                <Link to='/login'>Login</Link>
-                <Link to='/register'>Register</Link>
+                <Link to='/login'><button>Login</button></Link>
+                <Link to='/register'><button>Register</button></Link>
                 </>
               }
              
@@ -60,8 +61,11 @@ const handleLogOut = () =>{
             <Nav.Link eventKey={2} href="#memes">
             {
               user?.photoURL ?
+               <>
+                <span onClick={handleLogOut}><CiLogout className='me-2 fs-3 text-white'></CiLogout></span>
                 <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image>
-                : <FaGithub></FaGithub>
+               </>
+                : <FaUser></FaUser>
             }
             </Nav.Link>
           </Nav>
