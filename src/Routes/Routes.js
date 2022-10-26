@@ -24,17 +24,17 @@ export const routes = createBrowserRouter([
       {
         path:'/course',
         element:<Courses/>,
-        loader:() => fetch('http://localhost:5000/course')
+        loader:() => fetch('https://skillshare-server.vercel.app/course')
       },
       {
         path:'/category/:id',
         element:<Category/>,
-        loader:({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+        loader:({params}) => fetch(`https://skillshare-server.vercel.app/category/${params.id}`)
       },
       {
         path:'/coursedetails/:id',
         element:<CourseDetails/>,
-        loader:({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+        loader:({params}) => fetch(`https://skillshare-server.vercel.app/category/${params.id}`)
       },
       {
         path:'/checkout/:id',
