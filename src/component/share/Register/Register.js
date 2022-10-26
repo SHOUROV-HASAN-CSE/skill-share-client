@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-  const {createUser} = useContext(AuthContext);
+  const {createUser, updateUserProfile} = useContext(AuthContext);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,12 +24,25 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        handleUpdateUserProfile(name, photoURL);
        
     })
     .catch(error => {console.error(error)
       toast(error.message,{position:"top-center"});
     });
   }
+
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+        displayName: name,
+        photoURL: photoURL
+    }
+
+    updateUserProfile(profile)
+        .then(() => { })
+        .catch(error => console.error(error));
+}
+
 
   return (
     <div>

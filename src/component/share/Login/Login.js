@@ -5,7 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub} from "react-icons/fa";
 import Form from 'react-bootstrap/Form';
 import {AuthContext} from '../../../contexts/AuthProvider/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,6 +14,9 @@ const Login = () => {
 
   const {providerLogin, signIn} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
 
 
@@ -48,7 +51,7 @@ const handleSubmit = event =>{
       const user = result.user;
       console.log(user);
       form.reset();
-      navigate('/')
+      navigate(from, {replace: true});
   })
   .catch(error => {console.error(error)
     toast(error.message,{position:"top-center"});

@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
 import app from '../../firebase/firebase.config';
  
  export const AuthContext = createContext();
@@ -14,6 +14,7 @@ const [loading, setLoading] = useState(true);
 
 
   const providerLogin = (provider) =>{
+    setLoading(true);
     return signInWithPopup(auth, provider);
   }
 
@@ -22,14 +23,20 @@ const [loading, setLoading] = useState(true);
     return createUserWithEmailAndPassword(auth, email, password)
 }
 
-const signIn = (email, password) => {
-  setLoading(true);
-  return signInWithEmailAndPassword(auth, email, password);
+  const signIn = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+
+  const updateUserProfile = (profile) => {
+    return updateProfile(auth.currentUser, profile);
 }
 
 
 
+
   const logOut = () =>{
+    setLoading(true);
     return signOut(auth);
   }
 
@@ -39,6 +46,7 @@ const signIn = (email, password) => {
    const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
       console.log('inside Auth state change', currentUser);
       setUser(currentUser)
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -46,7 +54,7 @@ const signIn = (email, password) => {
   },[])
 
 
-const authInfo = {user, providerLogin, logOut, createUser, signIn };
+const authInfo = {user, loading, providerLogin, logOut, createUser, signIn, updateUserProfile };
 
   return (
     <AuthContext.Provider value={ authInfo }>
