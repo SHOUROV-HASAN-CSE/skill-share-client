@@ -53,14 +53,13 @@ const handleLogOut = () =>{
                 :
                 <>
                 <Link to='/login'><button>Login</button></Link>
-                <Link to='/register'><button>Register</button></Link>
                 </>
               }
              
               </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
             {
-              user?.photoURL ?
+              user?.uid ?
                <>
                 <span onClick={handleLogOut}><CiLogout className='me-2 fs-3 text-white'></CiLogout></span>
                 <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image>

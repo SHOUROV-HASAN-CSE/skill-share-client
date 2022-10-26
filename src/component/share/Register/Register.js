@@ -2,6 +2,10 @@ import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
+
 
 const Register = () => {
 
@@ -14,18 +18,27 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photoURL, email, password);
 
+    createUser(email, password)
+    .then(result => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+       
+    })
+    .catch(error => {console.error(error)
+      toast(error.message,{position:"top-center"});
+    });
   }
 
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Your Name</Form.Label>
         <Form.Control name="name" type="text" placeholder="Your Name" required/>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicPhotoUrl">
         <Form.Label>photo URL</Form.Label>
         <Form.Control name="photoURL" type="text" placeholder="photo URL"/>
       </Form.Group>
@@ -38,12 +51,13 @@ const Register = () => {
         <Form.Control name="password" type="password" placeholder="Password" required/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+        <p>Already have an <Link to='/login'> Account</Link></p>
       </Form.Group>
       <Button variant="info" type="submit">
         Register
       </Button>
     </Form>
+    <ToastContainer/>
     </div>
   );
 };
