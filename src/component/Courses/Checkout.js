@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Checkout = () => {
 
   const course = useLoaderData();
-  console.log(course);
   const {title, } = course;
 
   const handleSubmit = event => {

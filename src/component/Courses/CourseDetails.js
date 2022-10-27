@@ -28,7 +28,6 @@ ReactDOM.render(<App />, rootElement);
 const CourseDetails = () => {
 
   const course = useLoaderData();
-  console.log(course);
   const {title, image_url, category_id, details, total_view, rating, author} = course;
 
 

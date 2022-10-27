@@ -27,18 +27,14 @@ const Login = () => {
   const handleGoogleSingIn = () =>{
     providerLogin(googleProvider)
     .then(result=>{
-      const user = result.user;
       navigate(from, {replace: true});
-      console.log(user);
     })
     .catch(error =>console.error(error)) 
   }
   const handleGithubSingIn = () =>{
     providerLogin(githubProvider)
     .then(result=>{
-      const user = result.user;
       navigate(from, {replace: true});
-      console.log(user);
     })
     .catch(error =>console.error(error)) 
   }
@@ -51,8 +47,6 @@ const handleSubmit = event =>{
   const password = form.password.value;
   signIn(email, password)
   .then(result => {
-      const user = result.user;
-      console.log(user);
       form.reset();
       navigate(from, {replace: true});
   })
