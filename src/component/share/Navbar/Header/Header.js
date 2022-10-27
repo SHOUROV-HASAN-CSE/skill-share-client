@@ -10,6 +10,9 @@ import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 
 
 
@@ -30,6 +33,14 @@ const handleLogOut = () =>{
   .then(() =>{})
   .catch(error => console.error(error))
 }
+
+const renderTooltip = (props) => (
+  <Tooltip id="button-tooltip" {...props}>
+     <span>{user?.displayName}</span>
+  </Tooltip>
+);
+
+
 
   return (
     <Navbar collapseOnSelect className='mb-4' expand="lg" bg={radioValue % 2 ? 'info' : 'dark'} variant="dark">
@@ -64,7 +75,9 @@ const handleLogOut = () =>{
             {
               user?.uid ?
                <>
+               <OverlayTrigger placement="left" delay={{ show: 250, hide: 400 }}overlay={renderTooltip} >
                 <Image style={{height: '30px'}} roundedCircle src={user?.photoURL}></Image>
+                </OverlayTrigger>
                </>
                 : <FaUser></FaUser>
             }
