@@ -6,6 +6,24 @@ import Alert from 'react-bootstrap/Alert';
 import { Link } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import { BsFillEyeFill, BsFillStarFill } from "react-icons/bs";
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+
+
+
+const ref = React.createRef();
+function App() {
+  return (
+    <div>
+    </div>
+  );
+}
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+
+
+
+
 
 const CourseDetails = () => {
 
@@ -20,9 +38,11 @@ const CourseDetails = () => {
       <Alert className='shadow-lg' variant={'info'}>
       <Card>
       <Card.Header>
-       <div className='d-flex justify-content-center'><Button className='ms-5'>Download PDF</Button></div>
+      <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <div className='d-flex justify-content-center'><Button className='ms-5' onClick={toPdf}>Download PDF</Button></div>}
+      </Pdf>
       </Card.Header>
-      <Card.Body>
+      <Card.Body ref={ref}>
       <Card.Img variant="top" src={image_url} />
         <Card.Title className='fs-1 mt-3 text-center'>{title}</Card.Title>
         <Card.Text>
@@ -30,15 +50,15 @@ const CourseDetails = () => {
         </Card.Text>
         <div className='d-flex mt-5 mb-3'>
         <Image style={{height: '70px'}} roundedCircle src={author.img}></Image>
-        <div className='ms-2 mb-3 ms-2'>
+        <div className='ms-2'>
         <h4  className='mb-0'><small>Creator:</small> {author.name}</h4>
         <p>Published On: {author.published_date}</p>
         </div>
         </div>
-        <div className='d-flex justify-content-center mb-3'>
+      </Card.Body>
+      <div className='d-flex justify-content-center mb-5'>
         <Link to={`/checkout/${category_id}`}><Button className='fs-5' variant="primary">Get Premium Access</Button></Link>
         </div>
-      </Card.Body>
       <Card.Footer className="fs-5 d-flex justify-content-around">
       <div><BsFillEyeFill></BsFillEyeFill> {total_view}</div>
       <div><BsFillStarFill className='text-warning'></BsFillStarFill> {rating.number}</div>
