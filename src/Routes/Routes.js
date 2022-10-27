@@ -34,7 +34,9 @@ export const routes = createBrowserRouter([
       },
       {
         path:'/checkout/:id',
-        element:<PrivateRoute><Checkout/></PrivateRoute>
+        element:<PrivateRoute><Checkout/></PrivateRoute>,
+        loader:({params}) => fetch(`https://skillshare-server.vercel.app/checkout/${params.id}`)
+
       },
       {
         path:'/login',

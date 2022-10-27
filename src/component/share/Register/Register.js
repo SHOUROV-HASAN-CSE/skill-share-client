@@ -47,7 +47,7 @@ const Register = () => {
 
 
   return (
-    <Alert variant={'success'}>
+    <Alert className='shadow-lg' variant={'success'}>
       <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Your Name</Form.Label>

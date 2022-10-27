@@ -65,7 +65,7 @@ const handleSubmit = event =>{
 
 
   return (
-    <Alert variant={'info'}>
+    <Alert className='shadow-lg' variant={'info'}>
       <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
