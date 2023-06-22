@@ -1,0 +1,64 @@
+.hmeet{
+  padding: 80px 0;
+  margin-left: 9rem;
+  
+}
+.meethead{
+color: #036976;
+font-size: 15px;
+line-height: 15px;
+font-weight: 700;
+font-family: 'Jost', sans-serif;
+}
+.under{
+  border-bottom: 3px solid #036976 ;
+}
+.meet{
+  color:rgb(0, 38, 57);
+  font-size: 52px;
+  line-height: 42px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+}
+.meetp{
+  color:rgb(87, 88, 110);
+  font-size: 16px;
+  line-height: 27.2px;
+  font-weight: 400;
+  
+}
+.meetdot{
+margin-top: -15px;
+margin-bottom: -15px;
+}
+.dot{
+  font-size: 25px;
+  margin-right: 5px;
+}
+.meetimg{
+  height: 20rem;
+  margin-top: 4rem;
+}
+
+.custom-button{
+  position: relative;
+  background: transparent;
+  color: #036976;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  padding: 15px 25px;
+  transition: 0.5s;
+  border:1px solid #036976;
+}
+.custom-button:hover{
+  letter-spacing: 0.05em;
+  color: #036976;
+  background:#036976;
+  color:#e8e8e6;
+}
+.meetlogo{
+  margin-top: -5px;
+  font-size: 15px;
+}
