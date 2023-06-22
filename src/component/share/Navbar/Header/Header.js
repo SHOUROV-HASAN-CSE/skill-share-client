@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,26 +6,17 @@ import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import {FaUser} from "react-icons/fa";
 import { CiLogout} from "react-icons/ci";
-import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ToggleButton from 'react-bootstrap/ToggleButton';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-
+import './Header.css'
 
 
 
 const Header = () => {
 
 const {user, logOut} = useContext(AuthContext);
-const [radioValue, setRadioValue] = useState('1');
 
-
-const radios = [
-  { name: 'Light', value: '1' },
-  { name: 'Dark', value: '2' }
-];
 
 
 const handleLogOut = () =>{
@@ -43,19 +34,19 @@ const renderTooltip = (props) => (
 
 
   return (
-    <Navbar collapseOnSelect className='mb-4' expand="lg" bg={radioValue % 2 ? 'info' : 'dark'} variant="dark">
+    <Navbar collapseOnSelect className='mb-4 mainnavbar' expand="lg"  >
       <Container>
       <Navbar.Brand>
-      <Image className='me-2' style={{height: '35px'}} roundedCircle src='https://i.pinimg.com/736x/40/3d/4e/403d4e4b1392ebf2f91cca2e4ddde7f5.jpg'></Image>
-        Skill Share
+      <Image className='me-2' style={{height: '38px'}} roundedCircle src='https://i.pinimg.com/736x/40/3d/4e/403d4e4b1392ebf2f91cca2e4ddde7f5.jpg'></Image>
+       <span className='text-white fs-3'> Skill Share</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <Link to={'/'}><Button variant='info' className='text-white'>Home</Button></Link> 
-          <Link to={'/course'}><Button variant='info' className='text-white'>Courses</Button></Link> 
-          <Link to={'/blog'}><Button variant='info' className='text-white'>Blog</Button></Link> 
-          <Link to={'/faq'}><Button variant='info' className='text-white'>FAQ</Button></Link> 
+          <Link to={'/'} className="btn text-white">Home</Link> 
+          <Link to={'/course'} className="btn text-white">Courses</Link> 
+          <Link to={'/blog'} className="btn text-white">Blog</Link> 
+          <Link to={'/faq'} className="btn text-white"> FAQ</Link> 
             
           </Nav>
           <Nav>
@@ -63,11 +54,11 @@ const renderTooltip = (props) => (
               {
                 user?.uid ?
                 <>
-                 <span onClick={handleLogOut}><CiLogout className='me-2 fs-3 text-white'></CiLogout></span>
+                 <span onClick={handleLogOut}><CiLogout className='me-1 fs-3 text-white'></CiLogout></span>
                 </>
                 :
                 <>
-                <Link to={'/Login'}><Button variant='info' className='text-white'>Login</Button></Link> 
+                <Link to={'/Login'} className='btn text-white'>Login</Link> 
                 </>
               }
               </Nav.Link>
@@ -82,24 +73,7 @@ const renderTooltip = (props) => (
                 : <FaUser></FaUser>
             }
             </Nav.Link>
-            <div className='ms-3'>
-            <ButtonGroup>
-        {radios.map((radio, idx) => (
-          <ToggleButton
-            key={idx}
-            id={`radio-${idx}`}
-            type="radio"
-            variant={idx % 2 ? 'dark' : 'info'}
-            name="radio"
-            value={radio.value}
-            checked={radioValue === radio.value}
-            onChange={(e) => setRadioValue(e.currentTarget.value)}
-          >
-            {radio.name}
-          </ToggleButton>
-        ))}
-      </ButtonGroup>
-            </div>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>
