@@ -7,20 +7,14 @@ import Banner from './Banner/Banner';
 import Features from './Features/Features';
 import Meeting from './Meeting/Meeting';
 import Review from './Review/Review';
+import Skill from './Skill/Skill';
 import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
   return (
     <div>
       <Banner/>
-       {/* <Container>
-       <Card className="text-center">
-      <Card.Body>
-      <Card.Img variant="top" src='https://codetoinvent.com/wp-content/uploads/2020/12/programming-courses-back.jpg' />
-        <Link to={'/course'}><Button variant="info" className='mt-5 fs-4 text-white'>All Course</Button></Link>
-      </Card.Body>
-    </Card>
-       </Container> */}
+      <Skill/>
        <Features/>
        <Review/>
        <Meeting/>

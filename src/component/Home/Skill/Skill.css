@@ -1,0 +1,39 @@
+.hskill{
+  padding: 8rem 6rem;
+  margin-left: 7rem;
+  
+}
+.skillhead{
+color: #036976;
+font-size: 16px;
+line-height: 16px;
+font-weight: 700;
+font-family: 'Jost', sans-serif;
+margin-top: 8rem;
+}
+.under{
+  border-bottom: 3px solid #036976 ;
+}
+.skill{
+  color:rgb(0, 38, 57);
+  font-size: 52px;
+  line-height: 62px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+}
+.skillp{
+  color:rgb(87, 88, 110);
+  font-size: 16px;
+  line-height: 27.2px;
+  font-weight: 400;
+}
+.skillimg{
+  height: 40rem;
+  margin-top: 2rem;
+  border-radius: 15px;
+}
+.skilllogo{
+  color: #036976;
+  font-size: 1rem;
+}
+
