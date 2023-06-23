@@ -1,0 +1,54 @@
+.featurehead{
+  background-color: #3b3f42 ;
+  height: 55rem;
+  font-family: 'jost';
+  color: #fff;
+  text-align: center;
+}
+.festitle{
+font-size: 18px;
+line-height: 18px;
+font-weight: 700;
+padding-top: 5rem;
+}
+.festitles{
+  border-bottom: 2px solid #899199;
+}
+.fesahead{
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+.feshead2{
+color: #ffc93b;
+}
+.flogo{
+  font-size: 3rem;
+}
+.ftop{
+  color: rgb(148, 157, 166);
+  font-size: 20px;
+  line-height: 29px;
+  font-weight: 500;
+}
+.fmiddle{
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+}
+.fhead{
+  padding: 2rem;
+  width: 25rem;
+  height: 15rem;
+  border: 1px dashed #899199;
+}
+.fhead:hover{
+  background-color: #ce9d321e;
+}
+.rowdiv{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; 
+}
