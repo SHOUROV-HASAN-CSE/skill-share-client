@@ -1,0 +1,33 @@
+ .review-image{ 
+  height: 40rem;
+  width: 100%;
+  background: linear-gradient(rgba(28, 48, 59, 0.512), rgba(0, 0, 0, 0.222)), url('../../../assets/images/review.jpg') no-repeat;
+  background-size: cover;
+  background-position: bottom; 
+} 
+.review-title{
+  background-color: #161c2d ;
+  color: #fff;
+  width: 35rem;
+  font-size: 16px;
+  padding: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: 'Jost', sans-serif;
+  margin-top: 10rem ;
+  margin-left: 8rem;
+  border-top: 3px solid #fff;
+}
+.rtp{
+  font-size: 13px;
+  line-height: 40px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 5px;
+  
+}
+.rt{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+

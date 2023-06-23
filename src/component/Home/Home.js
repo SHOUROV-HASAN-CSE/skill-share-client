@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Meeting from './Meeting/Meeting';
+import Review from './Review/Review';
 import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       </Card.Body>
     </Card>
        </Container>
+       <Review/>
        <Meeting/>
     <Testimonial/>
     </div>
