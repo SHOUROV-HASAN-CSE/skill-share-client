@@ -37,8 +37,7 @@ const renderTooltip = (props) => (
     <Navbar collapseOnSelect className='mb-4 mainnavbar' expand="lg"  >
       <Container>
       <Navbar.Brand>
-      <Image className='me-2' style={{height: '38px'}} roundedCircle src='https://i.pinimg.com/736x/40/3d/4e/403d4e4b1392ebf2f91cca2e4ddde7f5.jpg'></Image>
-       <span className='text-white fs-3'> Skill Share</span>
+       <span className='text-white hmainlogo'> Skill Share</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

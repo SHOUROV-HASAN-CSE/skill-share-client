@@ -1,8 +1,4 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 import Banner from './Banner/Banner';
 import Features from './Features/Features';
 import Meeting from './Meeting/Meeting';

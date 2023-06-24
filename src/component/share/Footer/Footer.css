@@ -9,9 +9,44 @@
   text-decoration: none;
   padding-top: 8px;
   font-weight: 700;
-  padding-bottom: 2px solid black;
+  padding-bottom: 2px;
 }
 
 .footers:hover{
+  color: #027580;
+}
+.apptext{
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.footerimg{
+width: 95%;
+transition: 0.5s;
+}
+.footerimg:hover{
+width: 100%;
+}
+.footerlogo{
+  font-size: 1.3rem;
+  color: #027580;
+  margin-right: 10px;
+}
+.footertext{
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+.footerbr{
+  padding-bottom: 3rem;
+  border-bottom: 3px solid #899199b6;
+}
+.copytext{
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: -35px;
+}
+.fmainlogo{
+  font-family: 'Shrikhand', cursive;
+  font-size: 40px;
   color: #027580;
 }

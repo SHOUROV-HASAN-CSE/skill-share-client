@@ -12,7 +12,7 @@ const Banner = () => {
       <Container>
         <p>.</p>
         <h1 className='bannerhead'>Learn high demanding <span className='feshead2'>Skills from Experts</span> and start making money <br /> online!</h1>
-        <p className='bannerp'>Earn money from anywhere by leveraging your newly learned skills. LWS Academy will teach you the necessary skills to become a freelancer by explaining how to find clients, negotiate rates, market yourself as a freelancer, etc. on the go!</p>
+        <p className='bannerp'>Earn money from anywhere by leveraging your newly learned skills. Skill Share will teach you the necessary skills to become a freelancer by explaining how to find clients, negotiate rates, market yourself as a freelancer, etc. on the go!</p>
 
         <div>
         <Link to={'/course'}><button className='mt-4 cb1'> All Courses</button></Link>
